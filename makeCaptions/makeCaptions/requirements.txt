@@ -1,0 +1,2 @@
+docxtpl
+docx2txt

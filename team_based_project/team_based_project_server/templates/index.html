@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Image Captioning</title>
+ 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="https://hroy.eu/bootstrap/docs/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        
+        <div class="jumbotron">
+            <h1>Upload The Word File</h1>
+            <p class="lead"></p>
+            <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Slect File</a>
+            </p>
+        </div>
+
+        <p>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </p>
+
+        <form method="post" action="/" enctype="multipart/form-data">
+            <dl>
+                <p>
+                    <input type="file" name="file" autocomplete="off" required>
+                </p>
+            </dl>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+            
+        </form>
+        
+        <form method="get" action="/uploads" enctype="multipart/form-data">
+            <p>
+                <input type="submit" value="Download">
+            </p>
+            
+        </form>
+        
+    </div>
+</body>
+ 
+</html>
+
